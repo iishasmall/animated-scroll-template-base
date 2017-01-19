@@ -1,0 +1,72 @@
+
+// using this for styling the home section
+
+.home-background{
+	/*background-image:url('http://lorempixel.com/1500/768/nature/');*/
+}
+
+
+.home-section-padding{
+	 padding: 0px 0px;
+  	 text-align: center;
+  	 overflow-:hidden;
+}
+
+
+
+.header-home{
+	font-weight:300;
+	font-size: 25px;
+	color:#fff;
+	text-transform:uppercase;
+	@media (min-width:768px){
+
+		font-size: 50px;
+	
+	
+	}
+}
+
+.drop-shadow-bottom{
+	
+-webkit-box-shadow: inset -6px -19px 55px 8px rgba(0,0,0,0.75);
+-moz-box-shadow: inset -6px -19px 55px 8px rgba(0,0,0,0.75);
+box-shadow: inset -6px -19px 55px 8px rgba(0,0,0,0.75);
+
+}
+
+// home header titles section 
+
+.home-header-section{
+	position: absolute;
+
+	left:0px;
+	z-index:100;
+
+
+
+	// medium and large screen
+	@media (min-width:1500px){
+
+		left:0px;
+		top:150px; 
+		
+	
+	}
+
+
+	// small screen
+	@media (max-width:360px){
+
+		left:100px;
+		top:0px; 
+		
+	
+	}
+
+
+
+}
+
+
+

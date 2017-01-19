@@ -1,0 +1,76 @@
+//styling for the About section
+
+.icon-section{
+
+ 
+}
+
+.icon-size{
+	padding-top:10px;
+	width:50px;
+	height:50px;
+
+}
+
+.icon-btn{
+	
+	cursor:pointer;
+}
+
+
+.about-section-btn{
+	
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	width:250px;
+	height:250px;
+	background-color:rgba(0,0,0,.5);
+	cursor:pointer;
+
+	@include fade(0);
+	
+}
+
+.about-btn:hover,.about-btn:focus{
+	@include fade(1);
+}
+
+.show-about-info{
+	cursor:pointer;
+}
+
+
+.about-section-content{
+	font-size:14px;
+	font-width:300;
+	text-align:center;
+	color:#fff;
+	padding-top:50px;
+	
+}
+
+.about-team-header{
+	font-weight:700;
+	font-size:21px;
+	text-transform:uppercase;
+}
+
+.about-team-subhead{
+	font-weight:300;
+	font-size:18px;
+	margin-top:-5px;
+	text-transform:uppercase;
+}
+
+.about-team-padding-top{
+	padding-top:20px;
+}
+
+
+.about-team-padding-bottom{
+	padding-bottom:20px;
+}
+
