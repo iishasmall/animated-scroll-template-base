@@ -4,6 +4,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 var browserSync = require('browser-sync').create();
 var sftp = require('gulp-sftp');
+var minify = require('gulp-minify');
 
 var sassOptions = {
 	errLogToConsole: true,
@@ -13,6 +14,8 @@ var sassOptions = {
 var sassSources = './src/scss/**/*.scss';
 var sassOutput = './app/css';
 var htmlSource = 'app/**/*.html';
+var jsSource = './src/js/**/*.js';
+var jsOutput = './app/js/';
 
 
 gulp.task('sass', function(){
@@ -29,7 +32,20 @@ gulp.task('sass', function(){
 	.pipe(browserSync.stream())
 });
 
-gulp.task('serve', ['sass'], function(){
+gulp.task('compress', function() {
+  gulp.src(jsSource)
+    .pipe(minify({
+        ext:{
+            src:jsSource,
+            min:'.js'
+        },
+        exclude: ['tasks'],
+        ignoreFiles: ['.combo.js', '-min.js']
+    }))
+    .pipe(gulp.dest(jsOutput))
+});
+
+gulp.task('serve', ['sass','compress'], function(){
 
 	browserSync.init({
 		server: './app',
@@ -37,6 +53,7 @@ gulp.task('serve', ['sass'], function(){
 	})
 
 	gulp.watch(sassSources, ['sass'])
+	gulp.watch(jsSource, ['compress'])
 	gulp.watch(htmlSource).on('change', browserSync.reload);
 });
 
